@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/example/demo-project",
+  "violations": [
+    {
+      "rule_id": "SEC-001",
+      "category": "security",
+      "severity": "critical",
+      "file": "config.py",
+      "line": 17,
+      "description": "Hardcoded API credential",
+      "evidence": "Credential assigned directly in source code assignment statement",
+      "recommendation": "Use a secrets manager or environment variable via os.environ"
+    },
+    {
+      "rule_id": "DEP-001",
+      "category": "dependency management",
+      "severity": "medium",
+      "file": "requirements.txt",
+      "line": null,
+      "description": "Unpinned dependency versions",
+      "evidence": "Dependencies listed without strict version specifiers (e.g., requests instead of requests==2.31.0)",
+      "recommendation": "Pin all package versions to ensure reproducible builds"
+    }
+  ]
+}
