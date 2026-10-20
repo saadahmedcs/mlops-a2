@@ -54,20 +54,17 @@ Open .env and set your key:
 GEMINI_API_KEY=AQ.YourActualAPIKeyHere
 ```
 
-Execution
+## Execution
 Run the agent unattended via the command line using the required signature:
 
 ```Bash
 python agent.py --repo [https://github.com/octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) --output report.json
 ```
 
-Inspection Tools
+## Inspection Tools
 The agent dynamically selects from the following local inspection tools:
 
-list_files(): Discovers repository structure and files.
-
-read_file(path): Safely inspects configuration or source code files.
-
-search_code(pattern): Searches for suspicious patterns or strings across the codebase.
-
-git_log(max_count): Inspects recent commit history for anti-patterns.
+- list_files(): Discovers repository structure and files.
+- read_file(path): Safely inspects configuration or source code files.
+- search_code(pattern): Searches for suspicious patterns or strings across the codebase.
+- git_log(max_count): Inspects recent commit history for anti-patterns.
