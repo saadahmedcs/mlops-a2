@@ -28,7 +28,7 @@ REPORT_SCHEMA = {
                     "category": {"type": "STRING"},
                     "severity": {"type": "STRING", "enum": ["critical", "high", "medium", "low"]},
                     "file": {"type": "STRING"},
-                    "line": {"type": ["INTEGER", "NULL"]},
+                    "line": {"type": "INTEGER"},
                     "description": {"type": "STRING"},
                     "evidence": {"type": "STRING"},
                     "recommendation": {"type": "STRING"}
