@@ -68,3 +68,26 @@ The agent dynamically selects from the following local inspection tools:
 - read_file(path): Safely inspects configuration or source code files.
 - search_code(pattern): Searches for suspicious patterns or strings across the codebase.
 - git_log(max_count): Inspects recent commit history for anti-patterns.
+
+# Containerization (Docker)
+You can build and run the agent in an isolated, reproducible container environment using Docker.
+
+## Build the Docker image:
+
+```Bash
+docker build -t devops-agent .
+```
+
+## Run the containerized agent:
+Pass your runtime .env file securely using the environment file flag:
+
+```Bash
+docker run --rm --env-file .env devops-agent --repo [https://github.com/octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) --output report.json
+```
+
+# CI/CD Automation
+The repository utilizes decoupled GitHub Actions workflows for production-grade MLOps automation:
+
+- CI (ci.yml): Automatically triggers on pushes and pull requests to run the complete pytest suite and ensure code health.
+
+- CD (cd.yml): Automatically triggers on pushes to main, verifying code integrity before building and pushing the container image to the GitHub Container Registry (GHCR).
