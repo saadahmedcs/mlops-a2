@@ -12,14 +12,22 @@ An autonomous, AI-powered DevOps auditing agent built for MLOps & Production AI 
 
 ```text
 A2/
-├── agent.py            # CLI entry point
-├── agent_core.py       # Core agent loop, Gemini integration, and function declarations
-├── tools.py            # Inspection tool implementations (list_files, read_file, search_code, git_log)
-├── requirements.txt    # Project dependencies
-├── .env.example        # Environment variable template
-├── sample_report.json  # Authentic example JSON report output
-└── tests/              # Automated tests directory
-```
+├── .github/
+│   └── workflows/
+│       ├── ci.yml            # CI workflow for automated pytest execution
+│       └── cd.yml            # CD workflow for building and pushing to GHCR
+├── tests/
+│   ├── __init__.py
+│   ├── test_tools.py         # Unit tests for inspection tools & security checks
+│   └── test_agent.py         # Integration tests for agent lifecycle & mocking
+├── agent.py                  # CLI entry point
+├── agent_core.py             # Core agent loop, Gemini integration, and function declarations
+├── tools.py                  # Inspection tool implementations (list_files, read_file, search_code, git_log)
+├── requirements.txt          # Project dependencies
+├── Dockerfile                # Containerization setup
+├── .dockerignore             # Optimization & security filter for docker builds
+├── .env.example              # Environment variable template
+└── sample_report.json        # Authentic example JSON report output```
 
 ## Prerequisites & Installation
 Clone the repository and navigate to the project directory:
